@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japanese learning game</title>
+    <link rel="icon" href="./asset/logo.jpg"  type="jpg">
+    <link rel="stylesheet" href="./stylemenu.css">
+</head>
+<body>
+    <div id="wrapper">
+        <!-- block bên trái, bên phải, bên trên gồm name, logo và dòng choose a game to start -->
+        <div class="title">
+            <h1>Japanese learning game</h1>
+        </div>
+        <div class="btn" id="gameoption" onclick="gameoption()">Game Option</div>
+        <div class="btn" id="flashcard" onclick="flashcardOnclick()">LearningCard</div>
+        <div class="btn" id="contact" onclick="contact()">Contact us</div>    
+        <div class="btn" id="mario" onclick="marioOnclick()">MarioHunter</div>
+        <div class="btn" id="bubble" onclick="bubbleOnclick()">BubbleClick</div>
+        <div class="btn" id="game3" onclick="game3Onclick()">Typing Race</div>
+        <div class="btn" id="back" onclick="backOnclick()">Back</div>
+        <div id="contactwaifu">
+            <a href="https://www.facebook.com/ssg.motivators.team">Motivators</a>
+        </div>
+        </div>
+    </div>
+    <script>
+        var isplaysound = false;
+        function playSelectSound(){
+            if (isplaysound == false){
+                isplaysound = true;
+                var a = document.createElement("audio");
+                a.src = "./asset/menu_bg.mp3";
+                a.play();
+            }
+            a.onended = function(){
+                a.play()
+            }
+        }
+        function gameoption(){
+            document.getElementById("mario").style.display = "block";
+            document.getElementById("bubble").style.display = "block";
+            document.getElementById("game3").style.display = "block";
+            document.getElementById("back").style.display = "block";
+            document.getElementById("flashcard").style.display = "none";
+            document.getElementById("contact").style.display = "none";
+            document.getElementById("gameoption").style.display = "none";
+        }
+        function marioOnclick(){
+            window.location.href = "indexMario.html";
+        }
+        function bubbleOnclick(){
+            window.location.href = "indexBubble.html";
+        }
+        function flashcardOnclick(){
+            window.location.href = "indexHiracard.html";
+        }
+        function game3Onclick(){
+            window.location.href = "https://motivatorsteam.itch.io/japanese-learning-game";
+        }
+        function backOnclick(){
+            document.getElementById("mario").style.display = "none";
+            document.getElementById("bubble").style.display = "none";
+            document.getElementById("game3").style.display = "none";
+            document.getElementById("back").style.display = "none";
+            document.getElementById("flashcard").style.display = "block";
+            document.getElementById("contact").style.display = "block";
+            document.getElementById("gameoption").style.display = "block";
+        }
+        function contact(){
+            document.getElementById("contactwaifu").style.display = "block";
+                var loli = document.createElement("audio");
+                loli.src = "./asset/contactvoice.mp3";
+                loli.play();
+        }
+    </script>
+</body>
+</html>

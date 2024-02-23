@@ -1,0 +1,120 @@
+*{
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+#homefl{
+    background-image: url("./assetFlCard/background.jpg");
+    position: absolute;
+    height:100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1;
+    overflow-y: scroll;
+}
+
+.hf{  /*từng thanh 1*/
+    position: relative;
+    display: inline-block;
+    width: 100vw;
+    height: 15vh;
+}
+
+.button{
+    position: inherit;
+    display: inline-block;
+    margin-top: 3.5vh;
+    margin-right: 0.5vw;
+    width: 11vw;
+    height: 10vh;
+    left: 4vw;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    font-weight: bold;
+    line-height: 8vh;
+    font-size: 3.5vh;
+    border-style: groove;
+    background-color: rgb(151, 255, 153);
+    border-radius: 12px;
+    cursor: pointer;
+}
+.button:hover{
+    background-color: rgb(0, 121, 54);
+    color:bisque;
+}
+
+#flashcard{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: 10;
+    display: none;
+}
+#chargif{
+    position: absolute;
+    width: 30vw;
+    left: 10vw;
+    top: 5vh;
+    opacity: 0.9;
+}
+#charcard{
+    position: absolute;
+    width: 40vw;
+    left: 55vw;
+    top: 25vh;
+    border: 2px solid black;
+}
+#flashcard h1{
+    position: absolute;
+    width: 30vw;
+    left: 25vw;
+    top: 70vh;
+    left: 20vw;
+    font-size: 20vh;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+}
+
+.spacecard{
+    position: relative;
+    display: inline-block;
+    width: 7vw;
+    height: 13vh;
+    margin-top: 1vh;
+    margin-right: 0.5vw;
+    left: 4vw;
+}
+
+.card{
+  display: inline-block;
+  position: relative;
+  margin-top: 1vh;
+  margin-right: 0.5vw;
+  width: 7vw;
+  height: 13vh;
+  left: 4vw;
+  background-color: rgb(94, 86, 86);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align: center;
+  font-weight: bold;
+  line-height: 8vh;
+  font-size: 4.5vh;
+  border-style: groove;
+  box-sizing: border-box;
+  color: rgb(255, 248, 251);
+  cursor: pointer;
+}
+.card:hover{
+  background-color: blueviolet;
+  color: antiquewhite;
+  font-size: 5vh;
+}
+
+.smallcard{
+    line-height: 4vh;
+    font-size: 3vh;
+    font-weight: lighter;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}

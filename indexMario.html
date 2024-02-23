@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario Hunter</title>
+    <link rel="icon" href="./assetMario/mario.png"  type="png">
+</head>
+<body>
+    <div id="play" class="buttonmario" >PLAY</div>
+    <div id="quit" class="buttonmario">QUIT</div>
+    <div id="bg"></div>
+    <div id="bg2"></div>
+    <div id="logo">
+        <img src="./assetMario/logo.png" alt="#">
+    </div>
+    <script>
+        document.querySelector("#play").onclick = function(){
+            window.location.href = "indexMario2.html";
+        }
+        document.querySelector("#quit").onclick = function(){
+            window.location.href = "index.html";
+        }
+    </script>
+    <style>
+        #logo{
+            position: absolute;
+            z-index: 5;
+            transform: translateX(-50%);
+            left: 50vw;
+            top: 8%;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        #bg{
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            background-image: url("./assetMario/background.jpg");
+            background-size: cover;
+        }
+        #bg2{
+            position: absolute;
+            width: 200vw;
+            height: 100vh;
+            top: 1vh;
+            background-image: url("./assetMario/bg3.png");
+            background-size: cover;
+            animation: bg2GoLeft 10s linear infinite;
+        }
+        #mainGame{
+            position: absolute;
+            height: 100vh;
+            width: 100vw;
+            z-index: 1;
+        }
+        #play{
+            position: absolute;
+            width: 15vw;
+            height: 10vh;
+            background-color: rgb(33, 233, 50);
+            left: 30vw;
+            transform: translateX(-50%);
+            z-index: 2;
+            top: 50vh;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            border-radius: 5vh;
+            text-align: center;
+            font-weight: bold;
+            line-height: 10vh;
+            font-size: 5vh;
+            border-style: groove;
+        }
+        #quit{
+            position: absolute;
+            width: 15vw;
+            height: 10vh;
+            background-color: rgb(243, 66, 66);
+            left: 70vw;
+            transform: translateX(-50%);
+            z-index: 2;
+            top: 50vh;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            border-radius: 5vh;
+            text-align: center;
+            font-weight: bold;
+            line-height: 10vh;
+            font-size: 5vh;
+            border-style: groove;
+        }
+        #play:hover{
+            background-color: green;
+            cursor: pointer;
+        }
+        #quit:hover{
+            background-color: rgb(179, 17, 17);
+            cursor: pointer;
+        }
+        @keyframes bg2GoLeft {
+            0%{
+                left: 0vw;
+            }
+            100%{
+                left: -100vw;
+            }
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link rel="stylesheet" href="styleBubble.css">
+	</head>
+	<body>
+	<div id="onMobile">Set your pc screen in full size to play<br><br>
+		<img src="./assetBubble/troll.png" alt="#">
+	</div>
+	<div id="menu">
+		<button id="play" class="buttonbubble">Play</button>
+		<button id="setting" class="buttonbubble">Setting</button>
+		<button id="guide" class="buttonbubble">Guide</button>
+		<button id="quit" class="buttonbubble">Quit</button>
+		
+		<div id="settingtableb" class="tableb">
+			<button class="backbuttonb">&#8592 Back</button>
+			<p>Setting</p>
+			<div class="settinglineb">
+				Type:
+				<input type="radio" id="settinghirab" checked="true" name="table">
+				<label for="settinghirab">Hiragana&nbsp;&nbsp;</label>
+				<input type="radio" id="settingkatab" name="table">
+				<label for="settingkatab">Katakana</label>
+			</div>
+		</div>
+		<div id="guidetableb" class="tableb">
+			<button class="backbuttonb">&#8592 Back</button>
+			<h4>Guide</h4>
+			<p><br>Break the bubbles and win by finding and clicking on the letters in the bubbles as required</p>
+		</div>
+	</div>
+	<div id="tip">Welcome to BubbleClick</div>
+	<button id="pausebutton">Quit</button>
+	<div id="timecal">0s</div>
+	<button id="playagain" class="buttonbubble" onclick="myGameArea.restart()">Play Again</button>
+	</body>
+	<script src="Bubble.js"></script>
+	<script src="characterBubble.js"></script>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flashcards</title>
+  <link rel="stylesheet" href="styleflcard.css">
+</head>
+<body>
+  <div id="flashcard" onclick="comeback()">
+    <h1></h1>
+    <img src="" alt="#" id="chargif">
+    <img src="" alt="#" id="charcard">
+  </div>
+  <div id="homefl">
+    <div class="hf" id="row1">
+      <div class="card" onclick="zoom_div(this)">あ<p class="smallcard">a</p></div>
+      <div class="card" onclick="zoom_div(this)">い<p class="smallcard">i</p></div>
+      <div class="card" onclick="zoom_div(this)">う<p class="smallcard">u</p></div>
+      <div class="card" onclick="zoom_div(this)">え<p class="smallcard">e</p></div>
+      <div class="card" onclick="zoom_div(this)">お<p class="smallcard">o</p></div>
+    </div>
+    <div class="hf" id="row2">
+      <div class="card" onclick="zoom_div(this)">か<p class="smallcard">ka</p></div>
+      <div class="card" onclick="zoom_div(this)">き<p class="smallcard">ki</p></div>
+      <div class="card" onclick="zoom_div(this)">く<p class="smallcard">ku</p></div>
+      <div class="card" onclick="zoom_div(this)">け<p class="smallcard">ke</p></div>
+      <div class="card" onclick="zoom_div(this)">こ<p class="smallcard">ko</p></div>
+      <div class="spacecard"></div>
+      <div class="spacecard"></div>
+      <div class="card" onclick="zoom_div(this)">が<p class="smallcard">ga</p></div>
+      <div class="card" onclick="zoom_div(this)">ぎ<p class="smallcard">gi</p></div>
+      <div class="card" onclick="zoom_div(this)">ぐ<p class="smallcard">gu</p></div>
+      <div class="card" onclick="zoom_div(this)">げ<p class="smallcard">ge</p></div>
+      <div class="card" onclick="zoom_div(this)">ご<p class="smallcard">go</p></div>
+    </div>
+    <div class="hf" id="row3">
+      <div class="card" onclick="zoom_div(this)">さ<p class="smallcard">sa</p></div>
+      <div class="card" onclick="zoom_div(this)">し<p class="smallcard">shi</p></div>
+      <div class="card" onclick="zoom_div(this)">す<p class="smallcard">su</p></div>
+      <div class="card" onclick="zoom_div(this)">せ<p class="smallcard">se</p></div>
+      <div class="card" onclick="zoom_div(this)">そ<p class="smallcard">so</p></div>
+      <div class="spacecard"></div>
+      <div class="spacecard"></div>
+      <div class="card" onclick="zoom_div(this)">ざ<p class="smallcard">za</p></div>
+      <div class="card" onclick="zoom_div(this)">じ<p class="smallcard">ji</p></div>
+      <div class="card" onclick="zoom_div(this)">ず<p class="smallcard">zu</p></div>
+      <div class="card" onclick="zoom_div(this)">ぜ<p class="smallcard">ze</p></div>
+      <div class="card" onclick="zoom_div(this)">ぞ<p class="smallcard">zo</p></div>
+    </div>
+    <div class="hf" id="row4">
+      <div class="card" onclick="zoom_div(this)">た<p class="smallcard">ta</p></div>
+      <div class="card" onclick="zoom_div(this)">ち<p class="smallcard">chi</p></div>
+      <div class="card" onclick="zoom_div(this)">つ<p class="smallcard">tsu</p></div>
+      <div class="card" onclick="zoom_div(this)">て<p class="smallcard">te</p></div>
+      <div class="card" onclick="zoom_div(this)">と<p class="smallcard">to</p></div>
+      <div class="spacecard"></div>
+      <div class="spacecard"></div>
+      <div class="card" onclick="zoom_div(this)">だ<p class="smallcard">da</p></div>
+      <div class="card" onclick="zoom_div(this)">ぢ<p class="smallcard">dji</p></div>
+      <div class="card" onclick="zoom_div(this)">づ<p class="smallcard">dzu</p></div>
+      <div class="card" onclick="zoom_div(this)">で<p class="smallcard">de</p></div>
+      <div class="card" onclick="zoom_div(this)">ど<p class="smallcard">do</p></div>
+    </div>
+    <div class="hf" id="row5">
+      <div class="card" onclick="zoom_div(this)">な<p class="smallcard">na</p></div>
+      <div class="card" onclick="zoom_div(this)">に<p class="smallcard">ni</p></div>
+      <div class="card" onclick="zoom_div(this)">ぬ<p class="smallcard">nu</p></div>
+      <div class="card" onclick="zoom_div(this)">ね<p class="smallcard">ne</p></div>
+      <div class="card" onclick="zoom_div(this)">の<p class="smallcard">no</p></div>
+    </div>
+    <div class="hf" id="row6">
+      <div class="card" onclick="zoom_div(this)">は<p class="smallcard">ha</p></div>
+      <div class="card" onclick="zoom_div(this)">ひ<p class="smallcard">hi</p></div>
+      <div class="card" onclick="zoom_div(this)">ふ<p class="smallcard">fu</p></div>
+      <div class="card" onclick="zoom_div(this)">へ<p class="smallcard">he</p></div>
+      <div class="card" onclick="zoom_div(this)">ほ<p class="smallcard">ho</p></div>
+      <div class="spacecard"></div>
+      <div class="spacecard"></div>
+      <div class="card" onclick="zoom_div(this)">ば<p class="smallcard">ba</p></div>
+      <div class="card" onclick="zoom_div(this)">び<p class="smallcard">bi</p></div>
+      <div class="card" onclick="zoom_div(this)">ぶ<p class="smallcard">bu</p></div>
+      <div class="card" onclick="zoom_div(this)">べ<p class="smallcard">be</p></div>
+      <div class="card" onclick="zoom_div(this)">ぼ<p class="smallcard">bo</p></div>
+    </div>
+    <div class="hf" id="row7">
+      <div class="card" onclick="zoom_div(this)">ま<p class="smallcard">ma</p></div>
+      <div class="card" onclick="zoom_div(this)">み<p class="smallcard">mi</p></div>
+      <div class="card" onclick="zoom_div(this)">む<p class="smallcard">mu</p></div>
+      <div class="card" onclick="zoom_div(this)">め<p class="smallcard">me</p></div>
+      <div class="card" onclick="zoom_div(this)">も<p class="smallcard">mo</p></div>
+      <div class="spacecard"></div>
+      <div class="spacecard"></div>
+      <div class="card" onclick="zoom_div(this)">ぱ<p class="smallcard">pa</p></div>
+      <div class="card" onclick="zoom_div(this)">ぴ<p class="smallcard">pi</p></div>
+      <div class="card" onclick="zoom_div(this)">ぷ<p class="smallcard">pu</p></div>
+      <div class="card" onclick="zoom_div(this)">ぺ<p class="smallcard">pe</p></div>
+      <div class="card" onclick="zoom_div(this)">ぽ<p class="smallcard">po</p></div>
+    </div>
+    <div class="hf" id="row8">
+      <div class="card" onclick="zoom_div(this)">や<p class="smallcard">ya</p></div>
+      <div class="spacecard"></div>
+      <div class="card" onclick="zoom_div(this)">ゆ<p class="smallcard">yu</p></div>
+      <div class="spacecard"></div>
+      <div class="card" onclick="zoom_div(this)">よ<p class="smallcard">yo</p></div>
+    </div>
+    <div class="hf" id="row9">
+      <div class="card" onclick="zoom_div(this)">ら<p class="smallcard">ra</p></div>
+      <div class="card" onclick="zoom_div(this)">り<p class="smallcard">ri</p></div>
+      <div class="card" onclick="zoom_div(this)">る<p class="smallcard">ru</p></div>
+      <div class="card" onclick="zoom_div(this)">れ<p class="smallcard">re</p></div>
+      <div class="card" onclick="zoom_div(this)">ろ<p class="smallcard">ro</p></div>
+      <div class="spacecard"></div>
+      <div class="spacecard"></div>
+      <div class="card" onclick="zoom_div(this)">わ<p class="smallcard">wa</p></div>
+      <div class="spacecard"></div>
+      <div class="card" onclick="zoom_div(this)">ん<p class="smallcard">n</p></div>
+      <div class="spacecard"></div>
+      <div class="card" onclick="zoom_div(this)">を<p class="smallcard">wo</p></div>
+    </div>
+    <div class="hf" id="buttonrow">
+      <button class="button" onclick="back_to_menu()">&#8592 Back</button>
+      <button class="button" onclick="change_kata()">&#8645 katakana</button>
+    </div>
+  </div>
+  <script src="flcard.js"></script>
+</body>
+</html>

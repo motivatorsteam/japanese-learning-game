@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styleMario.css">
+    <title>mario</title>
+    <link rel="icon" href="./assetMario/mario.png"  type="png">
+</head>
+<body>
+    <audio src="./assetMario/bg.mp3"></audio>
+    <div id="restart" class="buttonmario" onclick="restart()">RESTART</div>
+    <div id="menu" class="buttonmario" onclick="returnToMenu()">MENU</div>
+    <div id="score">
+        <div id="curscore"> SCORE: 0</div>
+        <div id="time"> TIME LEFT: 90s</div>
+    </div>
+    <div id="ready" class="buttonmario">READY</div>
+    <div id="setting" class="buttonmario" onclick="setting()">SETTING</div>
+    <div id="guide" class="buttonmario" onclick="go_to_guide()">GUIDE</div>
+    <div id="settingtable" class="table">
+        <button class="backbutton">&#8592 Back</button>
+        <h4>Setting</h4>
+        <div class="settingline">
+            Level:
+            <input type="number" id="settinglevel" value="1" max="9" min="1">
+        </div>
+        <div class="settingline">
+            Time:
+            <input type="number" id="settingtime" value="60" step="10" max="120" min="60">
+            <p>&nbsp;s</p>
+        </div>
+        <div class="settingline">
+            Type:
+            <input type="radio" id="settinghira" checked="true" name="table">
+            <label for="settinghira">Hiragana&nbsp;&nbsp;</label>
+            <input type="radio" id="settingkata" name="table">
+            <label for="settingkata">Katakana</label>
+        </div>
+    </div>
+    <div id="guidetable" class="table">
+        <button class="backbutton">&#8592 Back</button>
+        <h4>Guide</h4>
+        <p><br>The koopa turtles are trying to invade the world in Japanese, help Mario fight them by typing the romanji that matches the letter on the turtle's back. You can choose from the following levels:<br>1: a, i, u, e, o<br>2: ka, ki, ku, ke, ko, ga, gi, gu, ge, go<br>3: sa, shi, su, se, so, za, ji, zu, ze, zo<br>4: ta, chi, tsu, te, to, da, dji, dzu, de, do<br>5: na, ni, nu, ne, no, ma, mi, mu, me, mo<br>6: ra, ri, ru, re, ro, ha, hi, fu, he, ho<br>7: ba, bi, bu, be, bo, pa, pi, pu, pe, po<br>8: ya, yu, yo, wa, n, wo<br>9: All the above characters</p>
+    </div>
+    <div id="bg"></div>
+    <div id="bg2"></div>
+    <div id="mainGame">
+        <div id="mario">
+            <img src="./assetMario/mario.png"  alt="#">
+        </div>
+    </div>
+    <div id="input">
+        <input type="text">
+    </div>
+    <script src="./core.js" type="module"></script>
+    <style id="jump">
+        #bg2{
+            position: absolute;
+            width: 200vw;
+            height: 100vh;
+            top: 1vh;
+            background-image: url("./assetMario/bg3.png");
+            background-size: cover;
+            animation: bg2GoLeft 2s linear infinite;
+        }
+    </style>
+    <style id="koopa">
+        @keyframes koopaMoveLeft {
+            0%{
+                left: 110vw;
+            }
+            100%{
+                left: 0vw;
+            }
+        }
+    </style>
+    <script>
+        document.querySelector("#settingtable").style.display = "none";
+        document.querySelector("#guidetable").style.display = "none";
+        function setting(){
+            document.querySelector("#settingtable").style.display = "block";
+            document.querySelector("#settingtable").addEventListener("mousemove", function(){
+                if (document.querySelector("#settinglevel").value > 9){
+                    document.querySelector("#settinglevel").value = 9;
+                }
+                if (document.querySelector("#settingtime").value > 120){
+                    document.querySelector("#settingtime").value = 120;
+                }
+                if (document.querySelector("#settinglevel").value < 1){
+                    document.querySelector("#settinglevel").value = 1;
+                }
+                if (document.querySelector("#settingtime").value < 60){
+                    document.querySelector("#settingtime").value = 60;
+                }
+            })
+            document.querySelector("#settinglevel").value = localStorage.getItem("level");
+            document.querySelector("#settingtime").value = localStorage.getItem("time");
+            if (localStorage.getItem("hira") == "true"){
+                document.querySelector("#settinghira").checked = true;
+            }else{
+                document.querySelector("#settingkata").checked = true;
+            }
+        }
+        function get_value(){
+            var level_value = document.querySelector("#settinglevel").value;
+            var time_value = document.querySelector("#settingtime").value;
+            var type_value = document.querySelector("#settinghira").checked;
+            return [level_value,time_value,type_value];
+        }
+        function go_to_guide(){
+            document.querySelector("#guidetable").style.display = "block";
+        }
+
+        function restart(){
+            window.location.href = ("indexMario2.html");
+        }
+        function returnToMenu(){
+            window.location.href = ("index.html");
+        }
+    </script>
+</body>
+</html>

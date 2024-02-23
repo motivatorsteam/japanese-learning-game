@@ -1,0 +1,99 @@
+*{
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+#wrapper{
+    background-image: url("./asset/background.gif");
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.title {
+    position: absolute;
+    width: 100vw;
+    height: 50vh;
+    text-align: left;
+    margin-top: 17vh;
+    margin-left: 7vw;
+}
+.title h1 {
+    display: inline-block;
+    color: #000000;
+    font-size: 5.5vh;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: "fontmenu", sans-serif;
+}
+
+
+.btn{
+    margin: 3vh 0;
+    position: relative;
+    width: 20vw;
+    height: 8vh;
+    left: 50vw;
+    transform: translateX(-50%);
+    z-index: 10;
+    top: 30vh;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    font-weight: bold;
+    line-height: 8vh;
+    font-size: 5vh;
+    color: rgb(219, 24, 83);
+    cursor: pointer;
+}
+.btn:hover{
+    color: rgb(83, 21, 255);
+    font-size: 4vh;
+    text-shadow: 2px 2px 4px #cb20ff;
+}
+@font-face {
+    font-family: "fontmenu";
+    src: url("./asset/fontmenu.ttf") format("truetype");
+}
+
+#mario{
+    display: none;
+}
+#bubble{
+    display: none;
+}
+#game3{
+    display: none;
+}
+#back{
+    display: none;
+}
+
+#contactwaifu{
+    position: relative;
+    background-image: url("./asset/contactus.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 15vh;
+    left: 68vw;
+    width: 25vw;
+    height: 50vh;
+    display: none;
+    animation:  contactuswaifu 0.5s linear;
+}
+#contactwaifu a{
+    position: inherit;
+    top: 30vh;
+    left: 12.5vw;
+    font-size: 2vw;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+@keyframes contactuswaifu {
+    0%{
+        top: 65vh;
+    }
+    100%{
+        top: 15vh;
+    }
+}
