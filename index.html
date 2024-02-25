@@ -6,6 +6,7 @@
     <title>Japanese learning game</title>
     <link rel="icon" href="./asset/logo.jpg"  type="jpg">
     <link rel="stylesheet" href="./stylemenu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div id="wrapper">
@@ -14,16 +15,20 @@
             <h1>Japanese learning game</h1>
         </div>
         <div class="btn" id="gameoption" onclick="gameoption()">Game Option</div>
-        <div class="btn" id="flashcard" onclick="flashcardOnclick()">LearningCard</div>
-        <div class="btn" id="contact" onclick="contact()">Contact us</div>    
-        <div class="btn" id="mario" onclick="marioOnclick()">MarioHunter</div>
-        <div class="btn" id="bubble" onclick="bubbleOnclick()">BubbleClick</div>
+        <div class="btn" id="flashcard" onclick="flashcardOnclick()">Learning Card</div>
+        <div class="btn" id="contact" onclick="contact()">Contact Us</div>   
+        <div class="btn" id="mario" onclick="marioOnclick()">Mario Hunter</div>
+        <div class="btn" id="bubble" onclick="bubbleOnclick()">Bubble Click</div>
         <div class="btn" id="game3" onclick="game3Onclick()">Typing Race</div>
         <div class="btn" id="back" onclick="backOnclick()">Back</div>
         <div id="contactwaifu">
-            <a href="https://www.facebook.com/ssg.motivators.team">Motivators</a>
+            <i class="fa fa-facebook" id="contactwaifu_facebook" style="font-size:1.5vw;color:rgb(0, 0, 23)"></i>
+            <p id="linkfb">Motivators</p>
+            <i class="fa fa-envelope" id="contactwaifu_gmail" style="font-size:1.5vw;color:rgb(0, 0, 23)"></i>
+            <p id="linkgml">fu.motivators@gmail.com</p>
         </div>
         </div>
+        <img id="logobranch" src="./asset/logobranch.png"></img>
     </div>
     <script>
         var isplaysound = false;
@@ -46,6 +51,7 @@
             document.getElementById("flashcard").style.display = "none";
             document.getElementById("contact").style.display = "none";
             document.getElementById("gameoption").style.display = "none";
+            document.getElementById("contactwaifu").style.display = "none";
         }
         function marioOnclick(){
             window.location.href = "indexMario.html";

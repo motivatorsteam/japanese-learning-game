@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Learning Cards</title>
+  <title>Flashcards</title>
   <link rel="stylesheet" href="styleflcard.css">
 </head>
 <body>
@@ -13,6 +13,11 @@
     <img src="" alt="#" id="charcard">
   </div>
   <div id="homefl">
+    <img class="logobranch" src="./asset/logobranch.png"></img>
+    <div class="hf" id="buttonrow">
+      <button class="button" onclick="back_to_menu()">&#11178 Back</button>
+      <button class="button" onclick="change_kata()">&#8651 katakana</button>
+    </div>
     <div class="hf" id="row1">
       <div class="card" onclick="zoom_div(this)">あ<p class="smallcard">a</p></div>
       <div class="card" onclick="zoom_div(this)">い<p class="smallcard">i</p></div>
@@ -118,10 +123,7 @@
       <div class="spacecard"></div>
       <div class="card" onclick="zoom_div(this)">を<p class="smallcard">wo</p></div>
     </div>
-    <div class="hf" id="buttonrow">
-      <button class="button" onclick="back_to_menu()">&#8592 Back</button>
-      <button class="button" onclick="change_kata()">&#8645 katakana</button>
-    </div>
+    
   </div>
   <script src="flcard.js"></script>
 </body>

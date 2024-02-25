@@ -7,6 +7,7 @@
     <link rel="icon" href="./assetMario/mario.png"  type="png">
 </head>
 <body>
+    <img id="logobranch" src="./asset/logobranch.png"></img>
     <div id="play" class="buttonmario" >PLAY</div>
     <div id="quit" class="buttonmario">QUIT</div>
     <div id="bg"></div>
@@ -29,6 +30,15 @@
             transform: translateX(-50%);
             left: 50vw;
             top: 8%;
+        }
+        #logobranch{
+            position: absolute;
+            width: 15vw;
+            left: 0.5vw;
+            top: 1vh;
+            z-index: 20;
+            opacity: 0.75;
+            border-radius: 30px;
         }
         *{
             margin: 0;
