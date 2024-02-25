@@ -3,6 +3,12 @@
     margin: 0;
     overflow: hidden;
 }
+#logobranch{
+    position: absolute;
+    width: 15vw;
+    top: 27vh;
+    left: 10.5vw;
+}
 
 #wrapper{
     background-image: url("./asset/background.gif");
@@ -71,22 +77,38 @@
 }
 
 #contactwaifu{
-    position: relative;
+    position: absolute;
     background-image: url("./asset/contactus.png");
     background-repeat: no-repeat;
     background-size: cover;
-    top: 15vh;
-    left: 68vw;
-    width: 25vw;
-    height: 50vh;
+    top: 47.5vh;
+    left: 65vw;
+    width: 30vw;
+    height: 55vh;
     display: none;
     animation:  contactuswaifu 0.5s linear;
 }
-#contactwaifu a{
+#contactwaifu_facebook{
     position: inherit;
-    top: 30vh;
-    left: 12.5vw;
-    font-size: 2vw;
+    top: 25.5vh;
+    left: 7vw;
+}
+#contactwaifu_gmail{
+    position: inherit;
+    top: 32vh;
+    left: 6.75vw;
+}#linkfb{
+    position: inherit;
+    top: 25vh;
+    left: 9.5vw;
+    font-size: 1.5vw;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#linkgml{
+    position: inherit;
+    top: 31.5vh;
+    left: 9.5vw;
+    font-size: 1.5vw;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 @keyframes contactuswaifu {

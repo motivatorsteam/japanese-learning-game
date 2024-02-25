@@ -3,6 +3,15 @@
     padding: 0;
     overflow: hidden;
 }
+#logobranch{
+    position: absolute;
+    width: 15vw;
+    left: 0.5vw;
+    top: 1vh;
+    z-index: 20;
+    opacity: 0.75;
+    border-radius: 30px;
+}
 #bg{
     position: absolute;
     width: 100vw;
