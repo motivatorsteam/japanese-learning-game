@@ -1,22 +1,23 @@
 
 import Mario from "./mario.js";
+import Mario2 from "./mario2.js";
 import Koopa from "./koopa.js";
+import Princess from "./princess.js";
+import Goku from "./goku.js";
 
-
-
-
-//main
-var a = new Mario();
-document.getElementById("mario").style.bottom = a.bottom;
-document.getElementById("mario").style.left = a.left;
+let score = 0;
 //ready step
 document.querySelector("#mario").style.display = "none";
 document.querySelector("#input").style.display = "none";
 document.querySelector("#restart").style.display = "none";
 document.querySelector("#menu").style.display = "none";
-
+var a = new Mario();
 document.querySelector("#settingtable button").onclick = back_to_ready;
 document.querySelector("#guidetable button").onclick = guide_to_ready;
+var bestscore = localStorage.getItem("bestfatherscore");
+if (bestscore != null){
+    document.querySelector("#bestscore").innerHTML = "Best Score: " + bestscore;
+}
 var arr_value = [1, 60, true];
 arr_value[0] = localStorage.getItem("level");
 arr_value[1] = localStorage.getItem("time");
@@ -32,15 +33,29 @@ function guide_to_ready(){
     document.querySelector("#guidetable").style.display = "none";
 }
 document.querySelector("#ready").addEventListener("click", ()=>{
+    var temp = document.getElementById("choose_main").querySelector("img");
     document.querySelector("#ready").style.display = "none";
     document.querySelector("#score").style.visibility = "visible";
     document.querySelector("#setting").style.display = "none";
     document.querySelector("#guide").style.display = "none";
+    document.querySelector("#bestscore").style.display = "none";
+    document.getElementById("choose_main").style.display = "none";
     document.querySelector("#mario").style.display = "block";   
     document.querySelector("#input").style.display = "block";
     playbgmusic();
+    //chốt nhân vật
+    if (temp.src.includes("mario.png")){
+        a = new Mario();
+    }else if (temp.src.includes("goku.png")){
+        a = new Goku();
+    }else if (temp.src.includes("princess.png")){
+        a = new Princess();
+    }else if (temp.src.includes("mario2.png")){
+        a = new Mario2();
+    }
+    document.getElementById("mario").style.bottom = a.bottom;
+    document.getElementById("mario").style.left = a.left;
     //tính điểm 
-    let score = 0;
     let time = arr_value[1];
     //xử lý tín hiệu nhận input
     let inputTextTag = document.querySelector("#input").querySelector("input");
@@ -68,7 +83,7 @@ document.querySelector("#ready").addEventListener("click", ()=>{
             inputTextTag.value = stringInput;
         }
         //check từ đang xét
-        if(stringInput.includes(b.queue[0]) && a.curmario != "./assetMario/mariogun3.png"){
+        if(stringInput.includes(b.queue[0]) && a.curmario != a.mg){
             //nếu trúng 1 con koopa
             document.getElementById("curscore").textContent = `SCORE: ${++score}`;
             isDisplayGun = true;
@@ -78,16 +93,16 @@ document.querySelector("#ready").addEventListener("click", ()=>{
             stringInput = "";
         }
         if(countDisplayGun <= 7 && isDisplayGun == true){
-            a.renderMarioGun();
+            a.renderMarioGun(countDisplayGun);
             countDisplayGun++;
-            playshotmusic();
+            a.playshotmusic();
             if(isExplode ==true){
                 document.querySelectorAll(".kpEle")[0].querySelector("img").src = "./assetMario/explode.gif";
                 isExplode = false;
                 document.querySelectorAll(".kpEle")[0].querySelector("div").textContent = "";
             }
-        }else if(a.curmario == "./assetMario/mariogun3.png"){
-            a.curmario = "./assetMario/mario1_move0.png";
+        }else if(a.curmario == a.mg2 || a.curmario == a.mg){
+            a.curmario = a.mm0;
             countDisplayGun = 0;
             isDisplayGun = false;
             document.querySelectorAll(".kpEle")[0].remove();
@@ -103,9 +118,7 @@ document.querySelector("#ready").addEventListener("click", ()=>{
             a.marioDead();
             document.getElementById("input").remove();
             document.getElementById("score").remove();       
-            document.querySelector("#bg").style.animation = "setGameOver 2s linear";
-            playdeadmusic();
-            document.querySelector("#bg").style.backgroundImage = "url(\"./assetMario/dead.png\")";  
+            playdeadmusic();  
             setTimeout(()=>{
                 document.querySelector("#restart").style.display = "block";
                 document.querySelector("#menu").style.display = "block";
@@ -116,14 +129,11 @@ document.querySelector("#ready").addEventListener("click", ()=>{
         //for tần số thấp để countdown thời gian
         if(count%10 == 0){
             time--;
-            document.getElementById("time").textContent = `TIME LEFT: ${time}s`
+            document.getElementById("time").textContent = `TIME LEFT: ${time}s`;
         }
         //xử lý nếu hết tg rồi mà vẫn chưa thua => thắng
         if(time == 0  && Koopa.returnGameOver() == false){
             playwinmusic();
-            document.querySelector("#bg").style.animation = "setGameWin 1s linear";   
-            document.querySelector("#bg").style.backgroundImage = "url(\"./assetMario/winbg.png\")"; 
-
             a.marioWin();
             Koopa.explodeAllKoopa();
             setTimeout(()=>{
@@ -140,6 +150,20 @@ document.querySelector("#ready").addEventListener("click", ()=>{
 
 })
 
+document.getElementById("restart").onclick = restart;
+document.getElementById("menu").onclick = returnToMenu;
+function restart(){
+    if (score > localStorage.getItem("bestfatherscore")){
+        localStorage.setItem("bestfatherscore", score);
+    }
+    window.location.href = ("indexMario2.html");
+}
+function returnToMenu(){
+    if (score > localStorage.getItem("bestfatherscore")){
+        localStorage.setItem("bestfatherscore", score);
+    }
+    window.location.href = ("index.html");
+}
 
 
 function playwinmusic(){
@@ -156,11 +180,6 @@ function playdeadmusic(){
 }
 function playbgmusic(){
     var a = document.querySelector("audio");
-    a.play();
-}
-function playshotmusic(){
-    var a = document.createElement("audio");
-    a.src = "./assetMario/gun.mp3";
     a.play();
 }
 

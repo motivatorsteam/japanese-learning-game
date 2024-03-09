@@ -10,15 +10,22 @@
 <body>
     <audio src="./assetMario/bg.mp3"></audio>
     <img id="logobranch" src="./asset/logobranch.png"></img>
-    <div id="restart" class="buttonmario" onclick="restart()">RESTART</div>
-    <div id="menu" class="buttonmario" onclick="returnToMenu()">MENU</div>
+    <div id="restart" class="buttonmario">RESTART</div>
+    <div id="menu" class="buttonmario">MENU</div>
     <div id="score">
         <div id="curscore"> SCORE: 0</div>
         <div id="time"> TIME LEFT: 90s</div>
     </div>
+    <div id="choose_main">
+        <img src="./assetMario/mario.png" alt="#"></img>
+        <p>Choose your character</p>
+        <button id="leftbuttoncm" onclick="leftbuttonpress()">&#9664</button>
+        <button id="rightbuttoncm" onclick="rightbuttonpress()">&#9654</button>
+    </div>
     <div id="ready" class="buttonmario">READY</div>
     <div id="setting" class="buttonmario" onclick="setting()">SETTING</div>
     <div id="guide" class="buttonmario" onclick="go_to_guide()">GUIDE</div>
+    <div id="bestscore" >BEST SCORE: 0</div>
     <div id="settingtable" class="table">
         <button class="backbutton">&#11178 Back</button>
         <h4>Setting</h4>
@@ -48,7 +55,7 @@
     <div id="bg2"></div>
     <div id="mainGame">
         <div id="mario">
-            <img src="./assetMario/mario.png"  alt="#">
+            <img src=""  alt="#">
         </div>
     </div>
     <div id="input">
@@ -109,15 +116,32 @@
             var type_value = document.querySelector("#settinghira").checked;
             return [level_value,time_value,type_value];
         }
+        function leftbuttonpress(){
+            temp = document.getElementById("choose_main").querySelector("img");
+            if (temp.src.includes("mario.png")){
+                temp.src = "./assetMario/goku.png";
+            }else if (temp.src.includes("goku.png")){
+                temp.src = "./assetMario/princess.png";
+            }else if (temp.src.includes("princess.png")){
+                temp.src = "./assetMario/mario2.png";
+            }else if (temp.src.includes("mario2.png")){
+                temp.src = "./assetMario/mario.png";
+            }
+        }
+        function rightbuttonpress(){
+            temp = document.getElementById("choose_main").querySelector("img");
+            if (temp.src.includes("mario.png")){
+                temp.src = "./assetMario/mario2.png";
+            }else if (temp.src.includes("mario2.png")){
+                temp.src = "./assetMario/princess.png";
+            }else if (temp.src.includes("princess.png")){
+                temp.src = "./assetMario/goku.png";
+            }else if (temp.src.includes("goku.png")){
+                temp.src = "./assetMario/mario.png";
+            }
+        }
         function go_to_guide(){
             document.querySelector("#guidetable").style.display = "block";
-        }
-
-        function restart(){
-            window.location.href = ("indexMario2.html");
-        }
-        function returnToMenu(){
-            window.location.href = ("index.html");
         }
     </script>
 </body>

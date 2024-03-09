@@ -1,10 +1,9 @@
-export default class Mario{
-    mm0 = "./assetMario/mario1_move0.png";
-    mm1 = "./assetMario/mario1_move1.png";
-    mm2 = "./assetMario/mario1_move2.png";
-    m = "./assetMario/mario.png";
-    curmario = "./assetMario/mario.png";
-    mg = "./assetMario/mario1gun.png";
+export default class Princess{
+    mm0 = "./assetMario/princess_0.png";
+    mm1 = "./assetMario/princess_1.png";
+    m = "./assetMario/princess.png";
+    curmario = "./assetMario/princess.png";
+    mg = "./assetMario/princessgun.png"
     bottom = "19vh";
     left = "15vw";
     //constructor
@@ -20,9 +19,6 @@ export default class Mario{
             this.curmario = this.mm1;
             document.getElementById("mario").querySelector("img").style.width = "15vh";
         }else if(this.curmario == this.mm1){
-            this.curmario = this.mm2;
-            document.getElementById("mario").querySelector("img").style.width = "15vh";
-        }else if(this.curmario == this.mm2){
             this.curmario = this.mm0;
             document.getElementById("mario").querySelector("img").style.width = "15vh";
         }
@@ -49,14 +45,14 @@ export default class Mario{
     //mario die
     marioDead(){
         document.querySelector("#mario").querySelector("img").src = "./assetMario/tomb.png";
-        document.querySelector("#bg").style.backgroundImage = "url(\"./assetMario/mariodead.png\")";
+        document.querySelector("#bg").style.backgroundImage = "url(\"./assetMario/princessdead.jpg\")";
         document.querySelector("#bg").style.animation = "setGameOver 2s linear";
         document.querySelector("#mario").style.bottom = this.bottom;
         setBgStop();
     }
     //mario win
     marioWin(){
-        document.querySelector("#mario").querySelector("img").src = "./assetMario/mariowin.png";
+        document.querySelector("#mario").querySelector("img").src = "./assetMario/princess_win.png";
         document.querySelector("#bg").style.animation = "setGameWin 1s linear";   
         document.querySelector("#bg").style.backgroundImage = "url(\"./assetMario/winbg.png\")"; 
         document.querySelector("#mario").width = "10vh";
@@ -64,10 +60,10 @@ export default class Mario{
         setBgStop();
     }
     playshotmusic(){
-    var a = document.createElement("audio");
-    a.src = "./assetMario/gun.mp3";
-    a.play();
-}
+        var a = document.createElement("audio");
+        a.src = "./assetMario/princessgun.mp3";
+        a.play();
+    }
 }
 function setBgStop(){
     document.querySelector("#jump").innerHTML = `

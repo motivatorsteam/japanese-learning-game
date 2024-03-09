@@ -1,10 +1,10 @@
-export default class Mario{
-    mm0 = "./assetMario/mario1_move0.png";
-    mm1 = "./assetMario/mario1_move1.png";
-    mm2 = "./assetMario/mario1_move2.png";
-    m = "./assetMario/mario.png";
-    curmario = "./assetMario/mario.png";
-    mg = "./assetMario/mario1gun.png";
+export default class Mario2{
+    mm0 = "./assetMario/mario2_0.png";
+    mm1 = "./assetMario/mario2_1.png";
+    mm2 = "./assetMario/mario2_2.png";
+    m = "./assetMario/mario2.png";
+    curmario = "./assetMario/mario2.png";
+    mg = "./assetMario/mario2gun.png";
     bottom = "19vh";
     left = "15vw";
     //constructor
@@ -13,6 +13,7 @@ export default class Mario{
     //delay
     
     renderRun(){
+        document.getElementById("mario").querySelector("img").src = this.curmario;
         if(this.curmario == this.m){
             this.curmario = this.mm0;
             document.getElementById("mario").querySelector("img").style.width = "15vh";
@@ -26,7 +27,6 @@ export default class Mario{
             this.curmario = this.mm0;
             document.getElementById("mario").querySelector("img").style.width = "15vh";
         }
-        document.getElementById("mario").querySelector("img").src = this.curmario;
         //chỉnh background trôi về trái nếu không phải là đang cầm súng
         if(this.curmario == this.mg){
             setBgFlow();
@@ -49,14 +49,14 @@ export default class Mario{
     //mario die
     marioDead(){
         document.querySelector("#mario").querySelector("img").src = "./assetMario/tomb.png";
-        document.querySelector("#bg").style.backgroundImage = "url(\"./assetMario/mariodead.png\")";
+        document.querySelector("#bg").style.backgroundImage = "url(\"./assetMario/mario2dead.jpg\")";
         document.querySelector("#bg").style.animation = "setGameOver 2s linear";
         document.querySelector("#mario").style.bottom = this.bottom;
         setBgStop();
     }
     //mario win
     marioWin(){
-        document.querySelector("#mario").querySelector("img").src = "./assetMario/mariowin.png";
+        document.querySelector("#mario").querySelector("img").src = "./assetMario/mario2win.png";
         document.querySelector("#bg").style.animation = "setGameWin 1s linear";   
         document.querySelector("#bg").style.backgroundImage = "url(\"./assetMario/winbg.png\")"; 
         document.querySelector("#mario").width = "10vh";
@@ -64,10 +64,10 @@ export default class Mario{
         setBgStop();
     }
     playshotmusic(){
-    var a = document.createElement("audio");
-    a.src = "./assetMario/gun.mp3";
-    a.play();
-}
+        var a = document.createElement("audio");
+        a.src = "./assetMario/gun.mp3";
+        a.play();
+    }
 }
 function setBgStop(){
     document.querySelector("#jump").innerHTML = `
