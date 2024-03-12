@@ -144,7 +144,7 @@ function updateGameArea() {
 function playbubble() {
 	startGame();
 	on_press_hint = false;
-	number_hint = 2;
+	number_hint = 5;
 	bubbletime = 0;
     document.getElementById("menu").style.display = "none";
 	document.querySelector("canvas").style.display = "block";
